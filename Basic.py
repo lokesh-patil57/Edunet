@@ -42,3 +42,19 @@ print(f"Keys in the dictionary: {list(city_data.keys())}")
 
 city_data.update({"Sydney": "Australia"})
 print(f"Dictionary after updating with Sydney: {city_data}")
+
+
+#Operators in Python
+
+print("\nBasic Operators in Python:")
+a = 10
+b = 3
+print(f"a = {a}, b = {b}")
+print(f"Addition (a + b): {a + b}") 
+print(f"Subtraction (a - b): {a - b}")
+print(f"Multiplication (a * b): {a * b}")
+print(f"Division (a / b): {a / b}")
+print(f"Floor Division (a // b): {a // b}")
+print(f"Modulus (a % b): {a % b}")
+print(f"Exponentiation (a ** b): {a ** b}")
+print(f"Equality (a == b): {a == b}")
