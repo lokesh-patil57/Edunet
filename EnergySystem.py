@@ -54,3 +54,44 @@ net_consumption = solar_building.calculate_net_energy_consumption()
 solar_contribution = solar_building.calculate_solar_contribution()
 print(f"Solar Contribution: {solar_contribution} kWh")
 print(f"Net Energy Consumption: {net_consumption} kWh")
+
+
+#Encapsulation example
+print("\nEncapsulation Example:")
+class EncapsulatedEnergySystem:
+    def __init__(self, building_name, energy_consumption, emission_factor):
+        self.__building_name = building_name
+        self.__energy_consumption = energy_consumption
+        self.__emission_factor = emission_factor
+
+    def calculate_carbon_footprint(self):
+        return self.__energy_consumption * self.__emission_factor
+
+    def get_building_name(self):
+        return self.__building_name
+
+    def set_energy_consumption(self, energy_consumption):
+        if energy_consumption >= 0:
+            self.__energy_consumption = energy_consumption
+        else:
+            print("Energy consumption cannot be negative.")
+
+#example usage of encapsulation
+encapsulated_building = EncapsulatedEnergySystem("Encapsulated Building", 5000, 0.45)
+print(f"Building Name: {encapsulated_building.get_building_name()}")
+
+#Polymorphism example
+print("\nPolymorphism Example:")
+class SolarEnergySystem(EnergySystem):
+    def __init__(self, building_name, energy_consumption, emission_factor, solar_production):
+        super().__init__(building_name, energy_consumption, emission_factor)
+        self.solar_production = solar_production
+
+    #overriding the carbon footprint method to account for Solar contribution
+    def calculate_carbon_footprint(self):
+        net_consumption = self.energy_consumption - self.solar_production
+        return net_consumption * self.emission_factor
+
+#example usage of polymorphism 
+solar_building = SolarEnergySystem("Solar Building", 5000, 0.45, 1500)
+solar_building.display_info()
