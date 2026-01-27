@@ -57,6 +57,7 @@ buildings_data = [
     {'name': 'Cafeteria', 'consumption': [60, 65, 55, 70, 62, 58, 50, 68, 56, 63, 59, 67, 61, 57, 64, 53, 69, 54, 62, 60, 58, 61, 59, 65]}
 ]
 
+<<<<<<< HEAD
 analyze_energy_consumption(buildings_data)
 
 
@@ -159,3 +160,6 @@ if __name__ == "__main__":
         total_allocated = sum(allocation.values())
         print(f"\nTotal Allocated: {total_allocated:.2f} kW")
         print("-" * 40)
+=======
+analyze_energy_consumption(buildings_data)
+>>>>>>> cf1fd43c4e63c4b87b2403fb194dfbb06ad5c93b
